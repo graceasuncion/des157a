@@ -2,7 +2,6 @@
 
 .inconsolata {
   font-family: "Inconsolata", monospace;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings:
@@ -17,20 +16,37 @@
 
 /* text styling*/
 
-h1, h2 {
+header h1, header h2 {
 
     font-family: "Changa One", sans-serif;
     font-weight: 200;
+    color: aliceblue;
 
 }
 
-p, a {
+body p, body a {
     font-family: "Inconsolata", monospace;
+    color: rgb(29, 28, 26);
+}
+
+footer p, footer a {
+    font-family: "Inconsolata", monospace;
+    color: aliceblue;
+}
+
+main h2{
+
+    font-family: "Changa One", sans-serif;
+    font-weight: 200;
+    color: rgb(29, 28, 26);
+
 }
 
 
-main ul li {
+main section ul{
     list-style-type: none;
+    padding: 0;
+    margin: 0
 }
 
 a {
@@ -50,13 +66,96 @@ a:hover {
     margin: 0 auto;
     padding: 20px;
 
+    align-items: center;
+    justify-content: center;
 }
 
 #banner {
     width: 1100px;
     height: 250px;
+    position: relative;
 }
 
 footer {
     text-align: center;
+}
+
+header{
+    text-align: center;
+}
+
+/*body styling*/
+
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(28, 28, 41);
+}
+
+main {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+main section{
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+}
+
+/*stars animation*/
+
+.star {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%; 
+  position: absolute;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+.star {
+  animation: twinkle 2s infinite;
+}
+
+/*shooting star animation*/
+
+.shooting-star{
+    position: absolute;
+    top: 20px;
+    right: -200px;
+    width: 140px;
+    height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, white, rgba(255,255,255,0));
+    opacity: 0;
+
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+#banner:hover .shooting-star {
+  animation: shooting 3s ease-out;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-15deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-1200px) translateY(80px) rotate(-15deg); /* moves left and down */
+        opacity: 0;
+    }
 }
