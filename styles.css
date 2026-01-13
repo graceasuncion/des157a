@@ -1,0 +1,62 @@
+/*google fonts*/
+
+.inconsolata {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.changa-one-regular {
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* text styling*/
+
+h1, h2 {
+
+    font-family: "Changa One", sans-serif;
+    font-weight: 200;
+
+}
+
+p, a {
+    font-family: "Inconsolata", monospace;
+}
+
+
+main ul li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*format styling*/
+
+#container {
+
+    max-width: 1200px;
+    min-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+#banner {
+    width: 1100px;
+    height: 250px;
+}
+
+footer {
+    text-align: center;
+}
