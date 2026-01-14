@@ -111,7 +111,7 @@ main section{
 
 .star {
   width: 5px;
-  height: 5px;
+  height: 6px;
   background-color: white;
   border-radius: 50%; 
   position: absolute;
