@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiement 1</title>
+</head>
+<body>
+    
+    <h1>Experiement 1</h1>
+
+    <h2>Open the console to play rock, paper, scissors!</h2>
+
+    <h3>If you want to play again, refresh the browser.</h3>
+
+    <script>
+        
+        //this is a game of rock, paper, scissors. but you will always lose
+
+        var game = prompt("Let's play rock, paper, scissor!", " ").toLowerCase();
+
+        //this would be the sequence and the selection
+        if(game === "scissor"){
+            console.log("ROCK! HAH I win and you lose LOL");
+        }
+        else if(game === "paper"){
+            console.log("SCISSORS! winner winner chicken dinner");
+        }
+        else if(game === "rock"){
+            console.log("PAPER! ...i smell a sore loser.");
+        }
+        else {
+
+            // this is the loop
+            for(var i = 3; i >= 1; i--){
+                console.log(i);
+            }
+            
+        console.log("Girl...we were supposed to be playing a game.");
+        
+        }
+
+    </script>
+
+    
+
+</body>
+</html>
