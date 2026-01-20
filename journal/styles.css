@@ -7,4 +7,88 @@
 
 }
 
-/*styling  for learning journal*/
+/*global webpage styling*/
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(28, 28, 41);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    font-family: "Inconsolata", monospace;
+    text-align: center;
+    color: aliceblue;
+}
+
+/*journal entry styling*/
+.journal-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 10px;
+
+  margin: 50px auto;
+  padding: 25px;
+  max-width: 600px;
+
+  background-color: aliceblue;
+  border-radius: 8px;
+  
+}
+
+.journal-entry time {
+  font-size: 0.85rem;
+  color: rgb(80, 80, 80);
+  margin-bottom: 10px;
+}
+
+/*journal text styling*/
+.journal-entry h2 {
+  font-family: "Changa One", sans-serif;
+  font-weight: 200;
+  color: rgb(29, 28, 26);
+  margin-bottom: 4px;
+}
+
+.journal-entry time {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.85rem;
+  color: rgb(90, 90, 90);
+  margin-bottom: 12px;
+}
+
+.journal-entry p {
+  font-family: "Inconsolata", monospace;
+  color: rgb(29, 28, 26);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.journal-entry a {
+  color: rgb(29, 28, 26);
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.journal-entry a:hover {
+  text-decoration: underline;
+}
+
+/*header styling*/
+
+header h1{
+    font-family: "Changa One", sans-serif;
+    color: aliceblue;
+
+    text-align: center;
+
+}
+
