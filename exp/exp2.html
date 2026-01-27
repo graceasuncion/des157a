@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiement 2</title>
+</head>
+<body>
+    
+
+    <h1>Experiement 2</h1>
+
+    <h2>Open the console to play rock, paper, scissors!</h2>
+
+    <h3>If you want to play again, refresh the browser.</h3>
+
+    <div id="result"></div>
+
+    <script>
+
+        
+        //this is a game of rock, paper, scissors. but you will always lose and these the variables and arrays that will be used
+
+        var choices = ["rock", "paper", "scissor"];
+
+        var loserResponses = ["ROCK! HAH I win and you lose.", "SCISSORS! Winner Winner Winner chicken dinner.", "PAPER!...I smell a sore loser."];
+
+
+        //funcion that will return the move that will make players lose//
+
+        function computerMove(playerMove){
+            if (playerMove === "scissor") 
+                return loserResponses[0];
+            if (playerMove ===  "paper")
+                return loserResponses[1] ;
+            if (playerMove === "rock")
+                return loserResponses[2];
+        }
+
+        //this function will return the data from the previous function 
+
+        function validChoice(game){
+            for (var i = 0; i < choices.length; i++) {
+                if (game === choices[i]) {
+                    return choices[i];
+                }
+            }
+            return null;
+        }
+
+        var game = prompt("let's play rock, paper,scissor!","").toLowerCase();
+
+        var output = document.querySelector("#result");
+
+        var playerChoice = validChoice(game);
+
+        if (playerChoice !== null){
+            var message = computerMove(playerChoice);
+            output.innerHTML = "<p>" + message + "</p>";
+            output.style.color = "red";
+        }
+        else {
+            var countdown ="";
+            for (var i = 3; i >= 1; i--) {
+                countdown += i + " ";
+            }
+            var message = countdown + "girl we  were supposed to be playing a game.";
+            output.innerHTML = "<p>" + countdown + "</p>"
+        }
+
+
+
+    </script>
+
+    
+
+</body>
+</html>
