@@ -1,0 +1,95 @@
+/*base stlying*/
+
+body {
+    margin: 0;
+    font-family: 'Mogra', cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*page styling*/
+header {
+    position: absolute;
+    top: 2.5rem;
+    left: 3rem;
+    color: #020202;
+    max-width: 400px;
+}
+
+header h1 {
+    font-family: 'Hanalei Fill', cursive;
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/*main styling */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+main form {
+    background-color: #e6e6e6;
+    padding: 2rem;
+    border-radius: 14px;
+    width: 520px;
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/*form section */
+form section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form section label {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+/* input styling*/
+
+form section input {
+    padding: 0.45rem;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+form section input:focus {
+    border: 1px solid #d6d9dc;
+    outline: dashed gray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/*submit button*/
+.submit {
+    grid-column: span 3;
+    justify-self: end;
+    padding: 0.6rem 1.6rem;
+    border-radius: 6px;
+    background-color: #9a9ad9;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #7f7fcc;
+}
