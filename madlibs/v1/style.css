@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    font-family: 'Mogra', cursive;
+    font-family: "DM Mono", monospace;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@ header {
 }
 
 header h1 {
-    font-family: 'Hanalei Fill', cursive;
+    font-family: "Mogra", system-ui;
     font-size: 3rem;
     margin: 0;
 }
@@ -75,22 +75,23 @@ form section input {
 
 form section input:focus {
     border: 1px solid #d6d9dc;
-    outline: dashed gray;
+    outline: dashed rgb(204, 108, 108);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
 }
 
 /*submit button*/
 .submit {
+    font-family: "DM Mono", monospace; ;
     grid-column: span 3;
     justify-self: end;
     padding: 0.6rem 1.6rem;
     border-radius: 6px;
-    background-color: #9a9ad9;
+    background-color: rgb(204, 108, 108);
     cursor: pointer;
 }
 
 .submit:hover {
-    background-color: #7f7fcc;
+    background-color:  rgb(204, 108, 108);
 }
 
