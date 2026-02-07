@@ -73,8 +73,6 @@ main form {
 
 }
 
-
-
 /*form section */
 form section {
     display: flex;
@@ -129,6 +127,32 @@ form section input:focus {
     background-color: rgb(186, 94, 94);
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(204, 108, 108, 0.4);
+}
+
+
+/*story styling*/
+
+#story{         
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    gap: 1rem;
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+}
+
+#story p {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background-color: rgb(193, 79, 79);
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
 /*animations*/
