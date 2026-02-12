@@ -30,7 +30,7 @@ footer{
 .journal-entry {
   display: flex;
   flex-direction: column;
-  align-items: center;
+ 
   
   gap: 10px;
 
@@ -55,6 +55,15 @@ footer{
   font-weight: 200;
   color: rgb(29, 28, 26);
   margin-bottom: 4px;
+  text-align: center;
+}
+
+.journal-entry h3 {
+  font-family: "Changa One", sans-serif;
+  font-weight: 200;
+  color: rgb(29, 28, 26);
+  margin-bottom: 2px;
+  text-align: left;
 }
 
 .journal-entry time {
@@ -62,6 +71,7 @@ footer{
   font-size: 0.85rem;
   color: rgb(90, 90, 90);
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .journal-entry p {
@@ -80,6 +90,17 @@ footer{
 
 .journal-entry a:hover {
   text-decoration: underline;
+}
+
+.journal-entry img {
+  border-radius: 8px;
+}
+
+.journal-entry figcaption{
+  font-family: "Inconsolata", monospace;
+  font-style: italic;
+
+
 }
 
 /*header styling*/
