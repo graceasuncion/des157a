@@ -39,16 +39,16 @@
 
         /*the madlib story*/
             const story = `
-                Dear ${firstName} ${lastName},
+            Dear <span class="highlight">${firstName} ${lastName}</span>,
 
-                I am writing to you in hopes of being your most ${adjOne} and ${adjTwo} employee at the amazing ${adjThree} convenience store because I love to enjoy ${verbIng} and being surrounded by ${pluralNoun} at all times.
-                I have many skills that can be useful to you, ${skill}, customer service, and the ability to fight off an ${animal} using only a ${tool}. I am extremely qualified to restock ${food} and can carry ${number} boxes at once. When customers are rude to me, I remain ${emotion} and simply ${verbQuiet} quietly in the snack aisle. When the store gets busy, I stay calm by remembering to ${verbCalm} and whisper “${sillyWord}” under my breath for emotional support. If hired, I promise always to refill the coffee, protect the sacred supply of ${beverage}, and only cry in the freezer aisle when ${celebrity} visits unexpectedly.
+            I am writing to you in hopes of being your most <span class="highlight">${adjOne}</span> and <span class="highlight">${adjTwo}</span> employee at the amazing <span class="highlight">${adjThree}</span> convenience store because I love to enjoy <span class="highlight">${verbIng}</span> and being surrounded by <span class="highlight">${pluralNoun}</span> at all times.
+            
+            I have many skills that can be useful to you, <span class="highlight">${skill}</span>, customer service, and the ability to fight off an <span class="highlight">${animal}</span> using only a <span class="highlight">${tool}</span>. I am extremely qualified to restock <span class="highlight">${food}</span> and can carry <span class="highlight">${number}</span> boxes at once. When customers are rude to me, I remain <span class="highlight">${emotion}</span> and simply <span class="highlight">${verbQuiet}</span> quietly in the snack aisle. When the store gets busy, I stay calm by remembering to <span class="highlight">${verbCalm}</span> and whisper “<span class="highlight">${sillyWord}</span>” under my breath for emotional support. If hired, I promise always to refill the coffee, protect the sacred supply of <span class="highlight">${beverage}</span>, and only cry in the freezer aisle when <span class="highlight">${celebrity}</span> visits unexpectedly.
 
-                Thank you for considering my application, and I look forward to hearing from you soon!
+            Thank you for considering my application, and I look forward to hearing from you soon!
 
-                Best,
-             ${diffFirst} ${diffLast}
-            `;
+            Best,
+            <span class="highlight">${diffFirst} ${diffLast}</span>`;
 
        
             madlibText.innerHTML = story;
