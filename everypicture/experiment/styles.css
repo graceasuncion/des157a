@@ -1,0 +1,42 @@
+#container {
+  width: 700px;
+  height: 525px;
+  overflow: hidden;
+  position: relative;
+}
+
+#container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Zoom positions */
+.topleft {
+  transform: scale(2) translate(0, 0);
+}
+
+.topright {
+  transform: scale(2) translate(-50%, 0);
+}
+
+.bottomleft {
+  transform: scale(2) translate(0, -50%);
+}
+
+.bottomright {
+  transform: scale(2) translate(-50%, -50%);
+}
+
+.center {
+  transform: scale(2) translate(-25%, -25%);
+}
+
+/* Reset */
+.start {
+  transform: scale(1);
+}
