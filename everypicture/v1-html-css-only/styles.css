@@ -4,5 +4,28 @@ h1 {
 
 button {
   font-family: "Cascadia Mono", sans-serif;
+  padding: 10px 20px;
+  background-color: rgb(220, 55, 88);
+  color: aliceblue;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+
+  transition: transform 0.2s ease;
+}
+
+button:hover{
+  background-color: rgb(184, 28, 57);
+  transform: scale(1.05);
+  
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin: 0;
 }
 
