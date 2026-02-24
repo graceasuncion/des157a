@@ -35,5 +35,13 @@ header {
 .jar {
   height: 500px;
   margin: 10px 0;
-}
 
+  animation: wobble 1s infinite ease-in-out alternate;
+  transform: center;
+}
+/*jar animation*/
+@keyframes wobble {
+  from {transform: rotate(-10deg);}
+  to {transform: rotate(10deg);}
+  
+}
