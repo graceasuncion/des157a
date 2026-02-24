@@ -1,0 +1,47 @@
+h1 {
+  font-family: "Cascadia Mono", sans-serif;
+  margin: 0 0 px 0;
+}
+
+button {
+  font-family: "Cascadia Mono", sans-serif;
+  padding: 10px 20px;
+  background-color: rgb(220, 55, 88);
+  color: aliceblue;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  margin-top: 10px;
+
+  transition: transform 0.2s ease;
+}
+
+button:hover{
+  background-color: rgb(184, 28, 57);
+  transform: scale(1.05);
+  
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+
+}
+
+/*jar image styling */
+.jar {
+  height: 500px;
+  margin: 10px 0;
+
+  animation: wobble 1s infinite ease-in-out alternate;
+  transform: center;
+}
+/*jar animation*/
+@keyframes wobble {
+  from {transform: rotate(-10deg);}
+  to {transform: rotate(10deg);}
+  
+}
