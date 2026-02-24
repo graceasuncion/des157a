@@ -1,5 +1,6 @@
 h1 {
   font-family: "Cascadia Mono", sans-serif;
+  margin: 0 0 px 0;
 }
 
 button {
@@ -10,6 +11,7 @@ button {
   border-radius: 8px;
   font-size: 14px;
   border: none;
+  margin-top: 10px;
 
   transition: transform 0.2s ease;
 }
@@ -26,6 +28,12 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh; 
-  margin: 0;
+
+}
+
+/*jar image styling */
+.jar {
+  height: 500px;
+  margin: 10px 0;
 }
 
