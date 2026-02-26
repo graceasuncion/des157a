@@ -31,8 +31,10 @@ header {
 
 }
 
+/*photo styling*/
+
 /*jar image styling */
-.jar {
+#jar {
   height: 500px;
   margin: 10px 0;
 
@@ -44,4 +46,10 @@ header {
   from {transform: rotate(-10deg);}
   to {transform: rotate(10deg);}
   
+}
+
+/*collection photos*/
+#collection img{
+  position: absolute;
+  height: 500px;
 }
