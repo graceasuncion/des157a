@@ -6,7 +6,12 @@
     var openJar = document.getElementById('jar');
     var collectionPhotos = document.getElementById('collection');
 
+    
+
     button.addEventListener("click", function(event){
+        
+        button.style.display = "none";
+
         openJar.src = "images/memory-jar-open.png";
 
         var jarItems = [
@@ -16,9 +21,22 @@
             "images/malakas-maganda-bracelet.png"
         ];
 
-        for (var i = 0; i<jarItems.length; i++){
+        var angles = [ -90, -45, 0, 45, 90 ];
+
+        collectionPhotos.innerHTML = "";
+
+        var radius = 200;
+
+        for (var i = 0; i< jarItems.length; i++){
             var img = document.createElement("img");
             img.src = jarItems[i];
+
+            img.style.position = "absolute";
+            img.style.top = "50%";
+            img.style.left = "50%";
+
+            img.style.transform = `translate(-50%, -50%) rotate(${angles[i]}deg) translate(0, -${radius}px) rotate(${-angles[i]}deg)`;
+
             collectionPhotos.appendChild(img);
         }
     });
