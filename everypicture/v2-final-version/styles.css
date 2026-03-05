@@ -112,7 +112,7 @@ header {
   max-width: 55vw; 
   max-height: 35vh; 
   border-radius: 8px; 
-  object-fit: contain; 
+  object-fit: contain;
 }
 #popupText { 
   font-family: "Cascadia Mono", sans-serif; 
