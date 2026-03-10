@@ -1,4 +1,26 @@
 body {
     font-family: "Darumadrop One", sans-serif;;
     text-align: center;
+    font-size: 64px;
+
+    background-image: url(images/forest_filler_image.jpg);
 }
+
+#start-btn {
+    text-align: center;
+    font-size: 36px;
+    color: aliceblue;
+
+    padding: 10px 20px;
+    background-color: rgb(42, 97, 47);
+    
+    border-radius: 8px;
+    border-style: none;
+        
+}
+
+#start-btn:hover {
+    background-color: rgb(13, 61, 18);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
