@@ -79,3 +79,10 @@ h2 {
     transform: translateY(0);
   }
 }
+
+/*styling for the game screen*/
+
+.gamescreen p{
+    font-family: "Darumadrop One", sans-serif;
+    text-align: center;
+}
