@@ -26,7 +26,7 @@ h2 {
     padding: 0;
 }
 
-/*start button styling*/
+/*start button*/
 
 #start-btn {
     font-family: "Darumadrop One", sans-serif;
@@ -52,7 +52,7 @@ h2 {
     position: relative;
 }
 
-#default-images .racoon-position {
+.racoon-position {
     position: relative;
     height: 500px;
     bottom: -40px;
@@ -61,7 +61,7 @@ h2 {
     animation: float-up-down 2s ease-in-out infinite;
 }
 
-#default-images .possum-position {
+.possum-position {
     position: relative;
     height: 500px;
     bottom: -40px;
