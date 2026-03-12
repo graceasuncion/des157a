@@ -85,7 +85,7 @@ h2 {
 
 #racoon-boxer{
     position: relative;
-    height: 500px;
+    height: 50vh;
     bottom: -90px;
     left: -300px;
 
@@ -94,7 +94,7 @@ h2 {
 
 #possum-boxer {
     position: relative;
-    height: 500px;
+    height: 50vh;
     top: -430px;
     right: -320px; 
 
