@@ -2,7 +2,7 @@
 
     "use script";
 
-    console.document("reading js");
+    console.log("reading js");
 
     const startBtn = document.querySelector('#start-btn');
     const startScreen = document.querySelector('#startscreen');
