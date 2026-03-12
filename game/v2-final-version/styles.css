@@ -80,7 +80,7 @@ h2 {
 #racoon-boxer{
     position: relative;
     height: 500px;
-    bottom: -60px;
+    bottom: -90px;
     left: -300px;
 
     animation: float-up-down 2s ease-in-out infinite;
@@ -90,7 +90,7 @@ h2 {
     position: relative;
     height: 500px;
     top: -430px;
-    right: -300px; 
+    right: -320px; 
 
     animation: float-up-down 2s ease-in-out infinite;
 }
