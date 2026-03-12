@@ -19,12 +19,14 @@ h2 {
     font-size: 64px;
 }
 
-#startscreen p {
+ p {
     font-family: "Darumadrop One", sans-serif;
     font-size: 36px;
 
     padding: 0;
 }
+
+/*start button styling*/
 
 #start-btn {
     font-family: "Darumadrop One", sans-serif;
@@ -81,8 +83,3 @@ h2 {
 }
 
 /*styling for the game screen*/
-
-.gamescreen p{
-    font-family: "Darumadrop One", sans-serif;
-    text-align: center;
-}
