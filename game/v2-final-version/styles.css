@@ -86,7 +86,7 @@ h2 {
 #racoon-boxer{
     position: relative;
     height: 50vh;
-    bottom: -90px;
+    bottom: -150px;
     left: -300px;
 
     animation: float-up-down 2s ease-in-out infinite;
@@ -95,7 +95,7 @@ h2 {
 #possum-boxer {
     position: relative;
     height: 50vh;
-    top: -430px;
+    top: -250px;
     right: -320px; 
 
     animation: float-up-down 2s ease-in-out infinite;
