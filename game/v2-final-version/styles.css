@@ -3,7 +3,7 @@ body {
 
     background-image: url(images/forest_background.jpg);
     background-repeat: no-repeat;
-    background-position: center -150px;
+    background-position: center -150px
 
 
 }
@@ -48,11 +48,36 @@ h2 {
 
 /*starting image styling*/
 
-#default-images {
+#startscreen, #gamescreen {
+    height: 100vh;
+    overflow: hidden;
     position: relative;
 }
 
-.racoon-position {
+
+#racoon-position {
+    position: relative;
+    height: 500px;
+    bottom: -30px;
+    left: -150px;
+
+    animation: float-up-down 2s ease-in-out infinite;
+}
+
+#possum-position {
+    position: relative;
+    height: 500px;
+    bottom: -30px;
+    right: -50px; 
+
+    animation: float-up-down 2s ease-in-out infinite;
+}
+
+
+/*styling for the game screen*/
+
+
+#racoon-boxer{
     position: relative;
     height: 500px;
     bottom: -40px;
@@ -61,15 +86,19 @@ h2 {
     animation: float-up-down 2s ease-in-out infinite;
 }
 
-.possum-position {
+#possum-boxer {
     position: relative;
     height: 500px;
-    bottom: -40px;
-    right: -100px; 
+    top: -200px;
+    right: -200px; 
 
     animation: float-up-down 2s ease-in-out infinite;
 }
 
+
+/*animations styling*/
+
+/*animation for racoon + possum*/
 @keyframes float-up-down {
     0% {
     transform: translateY(0); 
@@ -81,5 +110,3 @@ h2 {
     transform: translateY(0);
   }
 }
-
-/*styling for the game screen*/
