@@ -80,8 +80,8 @@ h2 {
 #racoon-boxer{
     position: relative;
     height: 500px;
-    bottom: -40px;
-    left: -200px;
+    bottom: -60px;
+    left: -300px;
 
     animation: float-up-down 2s ease-in-out infinite;
 }
@@ -89,12 +89,21 @@ h2 {
 #possum-boxer {
     position: relative;
     height: 500px;
-    top: -200px;
-    right: -200px; 
+    top: -430px;
+    right: -300px; 
 
     animation: float-up-down 2s ease-in-out infinite;
 }
 
+#text-box {
+    position: absolute;
+    z-index: 10;
+    font-family: "Darumadrop One", sans-serif;
+
+    background-color: aliceblue;
+
+    padding: 10px 20px 10px 20px;
+}
 
 /*animations styling*/
 
