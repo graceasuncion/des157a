@@ -19,7 +19,7 @@ h2 {
     font-size: 64px;
 }
 
-.startscreen p {
+#startscreen p {
     font-family: "Darumadrop One", sans-serif;
     font-size: 36px;
 
@@ -46,11 +46,11 @@ h2 {
 
 /*starting image styling*/
 
-.default-images {
+#default-images {
     position: relative;
 }
 
-.default-images .racoon-position {
+#default-images .racoon-position {
     position: relative;
     height: 500px;
     bottom: -40px;
@@ -59,7 +59,7 @@ h2 {
     animation: float-up-down 2s ease-in-out infinite;
 }
 
-.default-images .possum-position {
+#default-images .possum-position {
     position: relative;
     height: 500px;
     bottom: -40px;
