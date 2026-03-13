@@ -42,7 +42,8 @@
 
         messages.innerHTML =`<p>Oh! <strong class="${chosen.class}">${chosen.name}</strong> was chosen to attack first. Press the button to start the match.</p>`;
         
-        attackBtn.style.display = "block"
+        randomizeBtn.style.display = "none";
+        attackBtn.style.display = "block";
     });
 
 }());

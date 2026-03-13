@@ -38,7 +38,7 @@ h2 {
 
 .raccoon-highlight {
     color: rgb(173, 50, 50);
-    font-size: 4px;
+    font-size: 40px;
 }
 
 /*button styling*/
@@ -97,14 +97,21 @@ h2 {
 
 /*styling for the game screen*/
 
-#text-box {
-    position: absolute;
+.text-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
-    background-color: aliceblue;
+    gap: 10px;
+    margin: 30px;
+}
+
+#messages {
+    width: 800px;
+    text-align: center;
+
+    border: 8px solid rgb(150, 170, 190);
+    background-color: rgb(216, 228, 238);
     border-radius: 10px;
 
     padding: 10px 20px 10px 20px;
