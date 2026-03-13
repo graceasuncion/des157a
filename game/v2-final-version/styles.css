@@ -29,11 +29,18 @@ h2 {
     padding: 0;
 }
 
+.possum-highlight {
+    color: rgb(32, 71, 122);
+}
+
 /*button styling*/
 
 .btn {
     position: relative;
     z-index: 5;
+
+    display: block;
+    margin: 0 auto;
 
     font-family: "Darumadrop One", sans-serif;
     text-align: center;
@@ -61,7 +68,7 @@ h2 {
 }
 
 
-.racoon-position {
+.raccoon-position {
     position: absolute;
     bottom: 8vh;
     left: 15vw;
@@ -84,6 +91,10 @@ h2 {
 
 #text-box {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     background-color: aliceblue;
     border-radius: 10px;
@@ -94,7 +105,7 @@ h2 {
 
 /*animations styling*/
 
-/*animation for racoon + possum*/
+/*animation for raccoon + possum*/
 @keyframes float-up-down {
     0% {
     transform: translateY(0); 
