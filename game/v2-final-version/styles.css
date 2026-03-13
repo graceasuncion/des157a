@@ -29,9 +29,9 @@ h2 {
     padding: 0;
 }
 
-/*start button*/
+/*button styling*/
 
-#start-btn {
+.btn {
     position: relative;
     z-index: 5;
 
@@ -45,12 +45,12 @@ h2 {
     
     border-radius: 8px;
     border-style: none;
-        
 }
 
-#start-btn:hover {
+.btn:hover{
     background-color: rgb(13, 61, 18);
 }
+
 
 /*starting image styling*/
 
@@ -91,25 +91,6 @@ h2 {
     padding: 10px 20px 10px 20px;
 }
 
-#flip-coin-btn{
-    position: relative;
-    z-index: 5;
-
-    font-family: "Darumadrop One", sans-serif;
-    text-align: center;
-    font-size: 36px;
-    color: aliceblue;
-
-    padding: 10px 20px;
-    background-color: rgb(42, 97, 47);
-    
-    border-radius: 8px;
-    border-style: none;
-}
-
-#flip-coin-btn:hover{
-    background-color: rgb(13, 61, 18);
-}
 
 /*animations styling*/
 

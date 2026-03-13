@@ -4,6 +4,11 @@
 
     console.log("reading js");
 
+    /*variables that is needed for the game*/
+
+    const racoonPlayer = document.querySelector('#racoon-boxer');
+    const possumPlayer = document.querySelector('#possum-boxer');
+
     /*the switch from the starting screen to the game screen*/
 
     const startBtn = document.querySelector('#start-btn');
@@ -16,5 +21,14 @@
        gameScreen.style.display = "block";
 
     });
+
+    /*randomizing who will play first*/
+
+    const messages = document.querySelector('#messages');
+    const randomizeBtn = document.querySelector('#randomize-btn');
+
+    randomizeBtn.addEventListener('click', function(){
+        const playerFirst = Math.random() 
+    })
 
 }());

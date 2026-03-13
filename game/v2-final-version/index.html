@@ -33,7 +33,7 @@
 
         </div>
 
-        <button id="start-btn">Start Game</button>
+        <button id="start-btn" class="btn">Start Game</button>
     </section>
 
     <section id="gamescreen" style="display: none;">
@@ -43,18 +43,17 @@
         <div class="text-box">
 
             <div id="messages">
-                <p>Let's flip a coin to see who's going first!</p>
+                <p>Let's see who will go first!</p>
+                <button id="randomize-btn" class="btn">Randomize</button>
             </div>
 
-            <div id="coin" class="coin"></div>
-            
-             <button id="flip-coin-btn">Flip Coin</button>
+            <button id="attack-btn" class="btn" style="display: none;">Fight!</button>
 
         </div>
 
         <div id="racoon-in-the-ring">
 
-            <img src="images/racoon_in_the_ring.png" alt="boxer-racoon" class="racoon-position">
+            <img src="images/racoon_in_the_ring.png" alt="boxer-racoon" id="racoon-boxer" class="racoon-position">
 
             <div class="health-bar">
 
@@ -70,7 +69,7 @@
 
         <div id="possum-in-the-ring">
 
-            <img src="images/possum_in_the_ring.png" alt="possum-boxer" class="possum-position">
+            <img src="images/possum_in_the_ring.png" alt="possum-boxer" id="possum-boxer" class="possum-position">
 
             <div class="health-bar">
 
