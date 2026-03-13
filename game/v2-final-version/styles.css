@@ -1,20 +1,14 @@
 body {
     text-align: center;
+    width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
 
     background-image: url(images/forest_background_img.jpg);
     background-repeat: no-repeat;
-<<<<<<< HEAD
-    background-position: center -150px;
-
-    margin: 0;
-    padding: 0;
-
-=======
-    background-size: cover;
     background-position: center;
->>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
+    background-size: cover;
 }
 
 h1 {
