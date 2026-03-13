@@ -67,38 +67,20 @@ h2 {
 }
 
 
-<<<<<<< HEAD
 .racoon-position {
     position: absolute;
     bottom: 8vh;
     left: 15vw;
     height: 35vh;
-=======
-#racoon-position {
-    position: relative;
-    z-index: 1;
-    height: 50vh;
-    bottom: -30px;
-    left: -150px;
->>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 
     animation: float-up-down 2s ease-in-out infinite;
 }
 
-<<<<<<< HEAD
 .possum-position {
     position: absolute;
     bottom: 8vh;
     right: 15vw;
     height: 35vh; 
-=======
-#possum-position {
-    position: relative;
-    z-index: 1;
-    height: 50vh;
-    bottom: -30px;
-    right: -50px; 
->>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 
     animation: float-up-down 2s ease-in-out infinite;
 }
@@ -107,27 +89,6 @@ h2 {
 /*styling for the game screen*/
 
 
-<<<<<<< HEAD
-=======
-#racoon-boxer{
-    position: relative;
-    height: 50vh;
-    bottom: -150px;
-    left: -300px;
-
-    animation: float-up-down 2s ease-in-out infinite;
-}
-
-#possum-boxer {
-    position: relative;
-    height: 50vh;
-    top: -250px;
-    right: -320px; 
-
-    animation: float-up-down 2s ease-in-out infinite;
-}
-
->>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 #text-box {
     position: absolute;
 
