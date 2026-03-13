@@ -82,7 +82,6 @@ h2 {
 
 /*styling for the game screen*/
 
-
 #text-box {
     position: absolute;
 
@@ -90,6 +89,26 @@ h2 {
     border-radius: 10px;
 
     padding: 10px 20px 10px 20px;
+}
+
+#flip-coin-btn{
+    position: relative;
+    z-index: 5;
+
+    font-family: "Darumadrop One", sans-serif;
+    text-align: center;
+    font-size: 36px;
+    color: aliceblue;
+
+    padding: 10px 20px;
+    background-color: rgb(42, 97, 47);
+    
+    border-radius: 8px;
+    border-style: none;
+}
+
+#flip-coin-btn:hover{
+    background-color: rgb(13, 61, 18);
 }
 
 /*animations styling*/
