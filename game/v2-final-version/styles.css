@@ -1,13 +1,20 @@
 body {
     text-align: center;
+    margin: 0;
+    padding: 0;
 
-    background-image: url(images/forest_background.jpg);
+    background-image: url(images/forest_background_img.jpg);
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-position: center -150px;
 
     margin: 0;
     padding: 0;
 
+=======
+    background-size: cover;
+    background-position: center;
+>>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 }
 
 h1 {
@@ -31,6 +38,9 @@ h2 {
 /*start button*/
 
 #start-btn {
+    position: relative;
+    z-index: 5;
+
     font-family: "Darumadrop One", sans-serif;
     text-align: center;
     font-size: 36px;
@@ -57,20 +67,38 @@ h2 {
 }
 
 
+<<<<<<< HEAD
 .racoon-position {
     position: absolute;
     bottom: 8vh;
     left: 15vw;
     height: 35vh;
+=======
+#racoon-position {
+    position: relative;
+    z-index: 1;
+    height: 50vh;
+    bottom: -30px;
+    left: -150px;
+>>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 
     animation: float-up-down 2s ease-in-out infinite;
 }
 
+<<<<<<< HEAD
 .possum-position {
     position: absolute;
     bottom: 8vh;
     right: 15vw;
     height: 35vh; 
+=======
+#possum-position {
+    position: relative;
+    z-index: 1;
+    height: 50vh;
+    bottom: -30px;
+    right: -50px; 
+>>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 
     animation: float-up-down 2s ease-in-out infinite;
 }
@@ -79,6 +107,27 @@ h2 {
 /*styling for the game screen*/
 
 
+<<<<<<< HEAD
+=======
+#racoon-boxer{
+    position: relative;
+    height: 50vh;
+    bottom: -150px;
+    left: -300px;
+
+    animation: float-up-down 2s ease-in-out infinite;
+}
+
+#possum-boxer {
+    position: relative;
+    height: 50vh;
+    top: -250px;
+    right: -320px; 
+
+    animation: float-up-down 2s ease-in-out infinite;
+}
+
+>>>>>>> 6ec4adaaa72a1c0645ce8000dfb45d9dd2176284
 #text-box {
     position: absolute;
 
