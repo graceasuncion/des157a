@@ -29,8 +29,16 @@ h2 {
     padding: 0;
 }
 
+/*possum + raccoon text styling*/
+
 .possum-highlight {
     color: rgb(32, 71, 122);
+    font-size: 40px;
+}
+
+.raccoon-highlight {
+    color: rgb(173, 50, 50);
+    font-size: 4px;
 }
 
 /*button styling*/

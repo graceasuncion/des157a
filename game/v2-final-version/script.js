@@ -6,13 +6,16 @@
 
     /*variables that is needed for the game*/
 
-    const racoonPlayer = document.querySelector('#racoon-boxer');
+    const raccoonPlayer = document.querySelector('#raccoon-boxer');
     const possumPlayer = document.querySelector('#possum-boxer');
     const attackBtn = document.querySelector('#attack-btn')
 
     const gameData = {
-        animals: ['Racoon', 'Possum']
-    }
+        animals:[
+            {name:'Racoon', class: "raccoon-highlight"}, 
+            {name:'Possum', class: "possum-highlight"}
+        ]
+    };
 
     /*the switch from the starting screen to the game screen*/
 
@@ -34,7 +37,10 @@
 
     randomizeBtn.addEventListener('click', function(){
         const index = Math.floor(Math.random() * gameData.animals.length);
-        messages.innerHTML =`<p>Oh! <strong class="highlight">${gameData.animals[index]}</strong> was chosen to attack first. Press the button to start the match.</p>`;
+        const chosen = gameData.animals[index];
+
+
+        messages.innerHTML =`<p>Oh! <strong class="${chosen.class}">${chosen.name}</strong> was chosen to attack first. Press the button to start the match.</p>`;
         
         attackBtn.style.display = "block"
     });
