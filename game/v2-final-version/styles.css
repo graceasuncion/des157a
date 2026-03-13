@@ -75,7 +75,6 @@ h2 {
     position: relative;
 }
 
-
 .raccoon-position {
     position: absolute;
     bottom: 8vh;
@@ -102,7 +101,7 @@ h2 {
     flex-direction: column;
     align-items: center;
 
-    gap: 10px;
+    gap: 20px;
     margin: 30px;
 }
 
@@ -116,6 +115,45 @@ h2 {
 
     padding: 10px 20px 10px 20px;
 }
+
+.health-bar{
+    position: absolute;
+    top: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;              
+    max-width: 300px;       
+    height: 30px;
+    background-color: rgb(200, 223, 233);
+    border: 3px solid rgb(144, 170, 182);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#raccoon-in-the-ring {
+    position: absolute;
+    bottom: 10vh;
+    left: 15vw;
+}
+
+#possum-in-the-ring {
+    position: absolute;
+    bottom: 10vh;
+    right: 15vw;
+}
+
+#raccoon-in-the-ring img,
+#possum-in-the-ring img {
+    display: block;         
+    height: 35vh;
+    width: auto;
+}
+
+.fighter-anim {
+    animation: float-up-down 2s ease-in-out infinite;
+}
+
 
 
 /*animations styling*/
