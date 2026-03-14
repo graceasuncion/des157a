@@ -59,7 +59,7 @@
     /*health bar + damage function*/
     function randomDamage(min = 5, max = 35) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    };
 
     let raccoonHP = 100;
     let possumHP = 100;
@@ -85,9 +85,16 @@
 
         document.getElementById(textId).textContent = percent + "%";
 
-        console.log("FILL:", fill);
-        console.log("FILL PARENT:", fill ? fill.parentElement : "NULL — fill not found");
-    }
+        if (percent <=0){
+            if(barId === "raccoon-health-bar"){
+                gameOver("Possum");
+            } else if (barId === "possum-health-bar"){
+                gameOver("Raccoon");
+            }
+        }
+
+        console.log("Checking bar:", barId, "HP:", percent);
+    };
 
     /*damage/attack messages on the textbox*/
     function showMessage(text){
@@ -101,7 +108,10 @@
 
         updateHealth("possum-health-bar","possum-health",possumHP);
 
-        showMessage(`Raccoon punched Possum for ${damage} damage!`);
+        if (possumHP > 0){
+            showMessage(`Raccoon punched Possum for ${damage} damage!`);
+        }
+        
     }
 
     function possumAttack(){
@@ -110,33 +120,50 @@
 
         updateHealth("raccoon-health-bar","raccoon-health",raccoonHP);
 
-        showMessage(`Possum punched Raccoon for ${damage} damage!`);
+        if (raccoonHP > 0){
+            showMessage(`Possum punched Raccoon for ${damage} damage!`);
+        }
+        
     }
 
     /*attack button function*/
     attackBtn.addEventListener("click",function(){
+
+        if (raccoonHP <= 0 || possumHP <=0) return;
+
         if (turn === "raccoonPlayer"){
             raccoonAttack();
             turn = "possumPlayer";
 
-            setTimeout( function(){
-                showMessage("Now it's Possum's turn!");
-            }, 3500);
+            setTimeout(function(){
+                if (possumHP > 0 && raccoonHP > 0){
+                    showMessage("Now it's Possum's turn!");
+                }
+                
+            }, 1500);
             
         } else {
             possumAttack();
             turn = "raccoonPlayer"
 
             setTimeout( function(){
-                showMessage("Now it's Raccoon's turn!");
-            }, 3500);
+                if (possumHP > 0 && raccoonHP > 0){
+                    showMessage("Now it's Raccoon's turn!");
+                }
+                
+            }, 1500);
             
         }
 
         console.log("Current turn:", turn);
     });
 
-    console.log("FILL TEST:", document.querySelector("#raccoon-health-bar .fill"));
-    console.log("MESSAGES TEST:", messages);
+    function gameOver(winner){
+
+        attackBtn.style.display = "none";
+
+        showMessage(`${winner} wins the match!`);
+
+    };
     
 }());
