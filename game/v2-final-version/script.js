@@ -190,7 +190,10 @@
             winnerText.innerHTML = `<span class="possum-highlight">Possum</span> wins the match!`;
         }
 
-        document.querySelector('#gameover-overlay').style.display = "flex";
+        const overlay = document.querySelector('#gameover-overlay');
+        overlay.style.display = "flex";       
+        overlay.style.opacity = "1";  
+        overlay.style.pointerEvents = "auto";        
 
 
     };
@@ -212,7 +215,14 @@
         randomizeBtn.style.display = "block";
         attackBtn.style.display = "none";
 
-        document.querySelector('#gameover-overlay').style.display = "none";
+        const overlay = document.querySelector('#gameover-overlay');
+
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 300);
 
         turn = null;
     }
