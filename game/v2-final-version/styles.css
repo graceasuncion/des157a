@@ -200,6 +200,30 @@ h2 {
     animation: float-up-down 2s ease-in-out infinite;
 }
 
+/*gameover overlay styling*/
+#gameover-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(20, 20, 20, 0.9);
+    padding: 25px 35px;
+    border-radius: 12px;
+    text-align: center;
+
+    border: 8px solid rgb(150, 170, 190);
+    background-color: rgb(216, 228, 238);
+
+    z-index: 999;
+}
+
+
+#gameover-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
 
 
 /*animations styling*/

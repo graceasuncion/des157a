@@ -18,6 +18,7 @@
     };
 
     let turn = null
+    let turnMessageTimeout = null;
 
     /*the switch from the starting screen to the game screen*/
 
@@ -109,7 +110,8 @@
         updateHealth("possum-health-bar","possum-health",possumHP);
 
         if (possumHP > 0){
-            showMessage(`Raccoon punched Possum for ${damage} damage!`);
+            showMessage(`<span class="raccoon-highlight">Raccoon</span> punched Possum for ${damage} damage!`);
+
         }
         
     }
@@ -121,7 +123,8 @@
         updateHealth("raccoon-health-bar","raccoon-health",raccoonHP);
 
         if (raccoonHP > 0){
-            showMessage(`Possum punched Raccoon for ${damage} damage!`);
+            showMessage(`<span class="possum-highlight">Possum</span> punched Raccoon for ${damage} damage!`);
+
         }
         
     }
@@ -135,24 +138,19 @@
             raccoonAttack();
             turn = "possumPlayer";
 
-            setTimeout(function(){
-                if (possumHP > 0 && raccoonHP > 0){
-                    showMessage("Now it's Possum's turn!");
-                }
-                
+            turnMessageTimeout = setTimeout(function(){
+                showMessage(`Now it's <span class="possum-highlight">Possum</span>'s turn!`);
             }, 1500);
+
             
         } else {
             possumAttack();
             turn = "raccoonPlayer"
 
-            setTimeout( function(){
-                if (possumHP > 0 && raccoonHP > 0){
-                    showMessage("Now it's Raccoon's turn!");
-                }
-                
+            turnMessageTimeout = setTimeout(function(){
+                showMessage(`Now it's <span class="raccoon-highlight">Raccoon</span>'s turn!`);
             }, 1500);
-            
+
         }
 
         console.log("Current turn:", turn);
@@ -162,8 +160,40 @@
 
         attackBtn.style.display = "none";
 
-        showMessage(`${winner} wins the match!`);
+        const box = document.querySelector('#gameover-box');
+        const winnerText = document.querySelector('#winner-text');
+
+        if (winner === "Raccoon") {
+            winnerText.innerHTML = `<span class="raccoon-highlight">Raccoon</span> wins the match!`;
+        } else {
+            winnerText.innerHTML = `<span class="possum-highlight">Possum</span> wins the match!`;
+        }
+
+        box.style.display ="flex";
 
     };
-    
+
+    function restartGame(){
+
+        clearTimeout(turnMessageTimeout);
+
+        raccoonHP = 100;
+        possumHP = 100;
+
+
+        updateHealth("raccoon-health-bar", "raccoon-health", raccoonHP);
+        updateHealth("possum-health-bar", "possum-health", possumHP);
+
+        showMessage("<p>Press the button to choose who attacks first!</p>");
+
+        randomizeBtn.style.display = "block";
+        attackBtn.style.display = "none";
+
+        document.querySelector('#gameover-box').style.display = "none";
+
+        turn = null;
+    }
+
+    document.querySelector('#restart-btn').addEventListener("click", restartGame);
+
 }());
