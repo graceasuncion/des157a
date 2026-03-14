@@ -167,6 +167,7 @@
         console.log("Current turn:", turn);
     });
 
+    /*game over overlay function*/
     function gameOver(winner){
 
         attackBtn.style.display = "none";
@@ -183,10 +184,12 @@
             winnerText.innerHTML = `<span class="possum-highlight">Possum</span> wins the match!`;
         }
 
-        box.style.display ="flex";
+        document.querySelector('#gameover-overlay').style.display = "flex";
+
 
     };
 
+    /*restart button function*/
     function restartGame(){
 
         clearTimeout(turnMessageTimeout);
@@ -203,11 +206,27 @@
         randomizeBtn.style.display = "block";
         attackBtn.style.display = "none";
 
-        document.querySelector('#gameover-box').style.display = "none";
+        document.querySelector('#gameover-overlay').style.display = "none";
 
         turn = null;
     }
 
     document.querySelector('#restart-btn').addEventListener("click", restartGame);
+
+
+    /*resource overlay function*/
+    const resourcesLink = document.querySelector('#resources-link');
+    const resourcesOverlay = document.querySelector('#resources-overlay');
+    const closeResources = document.querySelector('#close-resources');
+
+    resourcesLink.addEventListener("click", () => {
+        resourcesOverlay.style.display = "flex";
+    });
+
+    closeResources.addEventListener("click", () => {
+        resourcesOverlay.style.display = "none";
+    });
+
+
 
 }());
