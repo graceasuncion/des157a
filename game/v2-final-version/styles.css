@@ -117,10 +117,14 @@ h2 {
 }
 
 /*health bar styling*/
-#raccoon-health-bar, #possum-health-bar {
-    width: 100%;
-    height: 100%;
-    position: relative;
+
+#raccoon-health,
+#possum-health {
+    position: absolute;
+    bottom: 40vh;  
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 .health-bar{
@@ -136,6 +140,13 @@ h2 {
     border-radius: 8px;
     overflow: hidden;
     z-index: 10;
+
+}
+
+#raccoon-health-bar, #possum-health-bar {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 .fill{
@@ -161,13 +172,13 @@ h2 {
 /*raccoon + possum boxer*/
 #raccoon-in-the-ring {
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     left: 15vw;
 }
 
 #possum-in-the-ring {
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     right: 15vw;
 }
 
