@@ -116,6 +116,13 @@ h2 {
     padding: 10px 20px 10px 20px;
 }
 
+/*health bar styling*/
+#raccoon-health-bar, #possum-health-bar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 .health-bar{
     position: absolute;
     top: -12%;
@@ -131,6 +138,27 @@ h2 {
     z-index: 10;
 }
 
+.fill{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(117, 199, 63);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.health-green {
+    background-color: rgb(117, 199, 63);
+}
+
+.health-yellow {
+    background-color: rgb(236, 218, 115);
+}
+
+.health-red {
+    background-color: rgb(240, 98, 98);
+}
+
+/*raccoon + possum boxer*/
 #raccoon-in-the-ring {
     position: absolute;
     bottom: 10vh;
@@ -148,6 +176,13 @@ h2 {
     display: block;         
     height: 35vh;
     width: auto;
+}
+
+#raccoon-health-bar div, #possum-health-bar div {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(99, 190, 99);
+    transition: width 0.3s ease;
 }
 
 .fighter-anim {
