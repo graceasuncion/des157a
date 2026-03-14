@@ -80,6 +80,7 @@
         fill.style.width = percent + "%";
 
         fill.classList.remove("health-green","health-yellow","health-red");
+        
 
         if(percent >=70){
             fill.classList.add("health-green");
@@ -88,6 +89,9 @@
         } else {
             fill.classList.add("health-red");
         }
+
+        console.log("FILL CLASSES NOW:", fill.className);
+
 
         document.getElementById(textId).textContent = percent + "%";
 
