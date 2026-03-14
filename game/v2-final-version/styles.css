@@ -168,7 +168,7 @@ h2 {
 
 #raccoon-health-bar .fill.health-green,
 #possum-health-bar .fill.health-green {
-    background-color: rgb(117, 199, 63);
+    background-color: rgb(99, 190, 99);
 }
 
 #raccoon-health-bar .fill.health-yellow,
@@ -202,12 +202,6 @@ h2 {
     width: auto;
 }
 
-#raccoon-health-bar div, #possum-health-bar div {
-    height: 100%;
-    width: 100%;
-    background-color: rgb(99, 190, 99);
-    transition: width 0.3s ease;
-}
 
 .fighter-anim {
     animation: float-up-down 2s ease-in-out infinite;
@@ -223,7 +217,9 @@ h2 {
     backdrop-filter: blur(4px);  
 
     display: none;
-    display: flex;
+    opacity: 0;
+    pointer-events: none;
+
     justify-content: center;
     align-items: center;
     

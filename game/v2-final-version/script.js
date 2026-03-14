@@ -6,6 +6,8 @@
 
     /*variables that is needed for the game*/
 
+    document.querySelector('#gameover-overlay').style.display = "none";
+
     const raccoonPlayer = document.querySelector('#raccoon-boxer');
     const possumPlayer = document.querySelector('#possum-boxer');
     const attackBtn = document.querySelector('#attack-btn');
@@ -198,8 +200,8 @@
 
         clearTimeout(turnMessageTimeout);
 
-        let raccoonHP = 100;
-        let possumHP = 100;
+        raccoonHP = 100;
+        possumHP = 100;
 
 
         updateHealth("raccoon-health-bar", "raccoon-health", raccoonHP);
