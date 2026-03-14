@@ -66,6 +66,9 @@
 
     function updateHealth(barId, textId, currentHP){
         const percent = Math.max(currentHP, 0);
+
+        console.log("HP VALUE RECEIVED:", currentHP, "PERCENT:", percent);
+
         
         const fill = document.querySelector(`#${barId} .fill`);
         fill.style.width = percent + "%";
@@ -115,11 +118,19 @@
         if (turn === "raccoonPlayer"){
             raccoonAttack();
             turn = "possumPlayer";
-            showMessage("Now it's Possum's turn!");
+
+            setTimeout( function(){
+                showMessage("Now it's Possum's turn!");
+            }, 3500);
+            
         } else {
             possumAttack();
             turn = "raccoonPlayer"
-            showMessage("Now it's Raccoon's turn!");
+
+            setTimeout( function(){
+                showMessage("Now it's Raccoon's turn!");
+            }, 3500);
+            
         }
 
         console.log("Current turn:", turn);
