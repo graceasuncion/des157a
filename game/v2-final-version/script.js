@@ -198,8 +198,8 @@
 
         clearTimeout(turnMessageTimeout);
 
-        raccoonHP = 100;
-        possumHP = 100;
+        let raccoonHP = 100;
+        let possumHP = 100;
 
 
         updateHealth("raccoon-health-bar", "raccoon-health", raccoonHP);
@@ -223,11 +223,11 @@
     const resourcesOverlay = document.querySelector('#resources-overlay');
     const closeResources = document.querySelector('#close-resources');
 
-    resourcesLink.addEventListener("click", () => {
+    resourcesLink.addEventListener("click", function() {
         resourcesOverlay.style.display = "flex";
     });
 
-    closeResources.addEventListener("click", () => {
+    closeResources.addEventListener("click", function() {
         resourcesOverlay.style.display = "none";
     });
 
