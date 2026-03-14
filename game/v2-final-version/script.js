@@ -8,7 +8,12 @@
 
     const raccoonPlayer = document.querySelector('#raccoon-boxer');
     const possumPlayer = document.querySelector('#possum-boxer');
-    const attackBtn = document.querySelector('#attack-btn')
+    const attackBtn = document.querySelector('#attack-btn');
+
+    /*audio sfx*/
+
+    const hitSound = new Audio("sounds/punch-sound.mp3");
+    const winnerSound = new Audio("sounds/winner-sound.mp3")
 
     const gameData = {
         animals:[
@@ -107,6 +112,9 @@
         const damage = randomDamage();
         possumHP -= damage;
 
+        hitSound.currentTime = 0;
+        hitSound.play();
+
         updateHealth("possum-health-bar","possum-health",possumHP);
 
         if (possumHP > 0){
@@ -119,6 +127,9 @@
     function possumAttack(){
         const damage = randomDamage();
         raccoonHP -= damage;
+
+        hitSound.currentTime = 0;
+        hitSound.play();
 
         updateHealth("raccoon-health-bar","raccoon-health",raccoonHP);
 
@@ -159,6 +170,9 @@
     function gameOver(winner){
 
         attackBtn.style.display = "none";
+
+        winnerSound.currentTime = 0;
+        winnerSound.play();
 
         const box = document.querySelector('#gameover-box');
         const winnerText = document.querySelector('#winner-text');
