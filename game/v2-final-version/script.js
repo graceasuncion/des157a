@@ -27,6 +27,23 @@
     let turn = null
     let turnMessageTimeout = null;
 
+    /*list of all timeouts*/
+    let timeouts = [];
+
+    function addTimeout(callback, delay) {
+        const id = setTimeout(callback, delay);
+        timeouts.push(id);
+        return id;
+    }
+
+    function clearAllTimeouts() {
+        for (let t of timeouts) {
+            clearTimeout(t);
+        }
+        timeouts = [];
+    }
+
+
     /*the switch from the starting screen to the game screen*/
 
     const startBtn = document.querySelector('#start-btn');
@@ -86,7 +103,7 @@
 
         if(percent >=70){
             fill.classList.add("health-green");
-        } else if (percent >= 30){
+        } else if (percent >= 20){
             fill.classList.add("health-yellow");
         } else {
             fill.classList.add("health-red");
@@ -108,9 +125,75 @@
         console.log("Checking bar:", barId, "HP:", percent);
     };
 
-    /*damage/attack messages on the textbox*/
+    /*messages on the textbox*/
     function showMessage(text){
         messages.innerHTML = `<p>${text}</p>`;
+    }
+
+    /*floating animation*/
+     function stopFloating(characterId){
+        const noFloat = document.getElementById(characterId);
+        noFloat.classList.remove("floating");
+     }
+
+     function resumeFloating(characterId){
+        const yesFloat = document.getElementById(characterId);
+        yesFloat.classList.add('floating');
+     }
+
+    /*attack animations*/
+
+    function playAttackAnimation(id, idleImg, attackImg){
+        const char = document.getElementById(id);
+
+        stopFloating(id);
+        char.src = attackImg;
+
+        setTimeout(function(){
+            char.src = idleImg;
+            resumeFloating(id);
+        }, 500);
+    }
+
+    function smallHitAnim(characterId){
+        const smallHit = document.getElementById(characterId);
+        smallHit.classList.remove("small-hit");
+        void smallHit.offsetWidth;
+        smallHit.classList.add("small-hit");
+
+        setTimeout( function(){
+            smallHit.classList.remove("small-hit");
+        }, 2000);
+    }
+
+    function bigHitAnim(characterId){
+        const bigHit = document.getElementById(characterId);
+        bigHit.classList.remove("big-hit");
+        void bigHit.offsetWidth;
+        bigHit.classList.add("big-hit");
+
+        setTimeout(function(){
+            bigHit.classList.remove("big-hit");
+
+        },1500);
+    }
+
+    /*dodge animation*/
+
+    function dodgeAnim(characterId){
+        const char = document.getElementById(characterId);
+
+        stopFloating(characterId);
+
+        char.classList.remove("dodge");
+        void char.offsetWidth;
+        char.classList.add("dodge");
+
+        setTimeout(function(){
+            char.classList.remove("dodge");
+            resumeFloating(characterId);
+        }, 500);
+
     }
 
     /*raccoon + possum attack*/
@@ -121,13 +204,26 @@
         hitSound.currentTime = 0;
         hitSound.play();
 
+        playAttackAnimation(
+            "raccoon-boxer",             
+            "images/racoon_in_the_ring.png",    
+            "images/racoon_fighting.png"   
+        );
+
+        if (damage <= 15) {
+            smallHitAnim("possum-boxer");
+        } else {
+            bigHitAnim("possum-boxer");
+        }
+
         updateHealth("possum-health-bar","possum-health",possumHP);
 
         if (possumHP > 0){
             showMessage(`<span class="raccoon-highlight">Raccoon</span> punched Possum for ${damage} damage!`);
-
         }
         
+        console.log("Raccoon HP:", raccoonHP, "Possum HP:", possumHP);
+
     }
 
     function possumAttack(){
@@ -137,41 +233,96 @@
         hitSound.currentTime = 0;
         hitSound.play();
 
+        playAttackAnimation(
+            "possum-boxer",
+            "images/possum_in_the_ring.png",
+            "images/possum_fighting.png"
+        );
+
+        if (damage <= 15) {
+            smallHitAnim("raccoon-boxer");
+        } else {
+            bigHitAnim("raccoon-boxer");
+        }
+
         updateHealth("raccoon-health-bar","raccoon-health",raccoonHP);
 
         if (raccoonHP > 0){
             showMessage(`<span class="possum-highlight">Possum</span> punched Raccoon for ${damage} damage!`);
-
         }
-        
+
+        console.log("Raccoon HP:", raccoonHP, "Possum HP:", possumHP);
+
+            
     }
 
     /*attack button function*/
-    attackBtn.addEventListener("click",function(){
+    attackBtn.addEventListener("click", function () {
 
-        if (raccoonHP <= 0 || possumHP <=0) return;
+        if (raccoonHP <= 0 || possumHP <= 0) return;
 
-        if (turn === "raccoonPlayer"){
+        attackBtn.style.display = "none";
+
+        
+        if (turn === "raccoonPlayer") {
+
+            // DODGE CHECK
+            if (Math.random() < 0.3) {
+                dodgeAnim("possum-boxer");
+                showMessage(`<span class="possum-highlight">Possum</span> dodged the attack!`);
+                turn = "possumPlayer";
+
+                addTimeout(() => {
+                    showMessage(`Now it's <span class="possum-highlight">Possum</span>'s turn!`);
+                    attackBtn.style.display = "block";
+                }, 1500);
+
+                return;
+            }
+
+           
             raccoonAttack();
             turn = "possumPlayer";
 
-            turnMessageTimeout = setTimeout(function(){
-                showMessage(`Now it's <span class="possum-highlight">Possum</span>'s turn!`);
+            addTimeout(() => {
+                if (possumHP > 0) {
+                    showMessage(`Now it's <span class="possum-highlight">Possum</span>'s turn!`);
+                    attackBtn.style.display = "block";
+                }
             }, 1500);
+
+        } 
+        
+        else {
 
             
-        } else {
+            if (Math.random() < 0.2) {
+                dodgeAnim("raccoon-boxer");
+                showMessage(`<span class="raccoon-highlight">Raccoon</span> dodged the attack!`);
+                turn = "raccoonPlayer";
+
+                addTimeout(() => {
+                    showMessage(`Now it's <span class="raccoon-highlight">Raccoon</span>'s turn!`);
+                    attackBtn.style.display = "block";
+                }, 1500);
+
+                return;
+            }
+
+            
             possumAttack();
-            turn = "raccoonPlayer"
+            turn = "raccoonPlayer";
 
-            turnMessageTimeout = setTimeout(function(){
-                showMessage(`Now it's <span class="raccoon-highlight">Raccoon</span>'s turn!`);
+            addTimeout(() => {
+                if (raccoonHP > 0) {
+                    showMessage(`Now it's <span class="raccoon-highlight">Raccoon</span>'s turn!`);
+                    attackBtn.style.display = "block";
+                }
             }, 1500);
-
         }
-
-        console.log("Current turn:", turn);
     });
+
+
 
     /*game over overlay function*/
     function gameOver(winner){
@@ -201,7 +352,7 @@
     /*restart button function*/
     function restartGame(){
 
-        clearTimeout(turnMessageTimeout);
+        clearAllTimeouts();
 
         raccoonHP = 100;
         possumHP = 100;

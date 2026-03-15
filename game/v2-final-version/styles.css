@@ -66,6 +66,10 @@ h2 {
     background-color: rgb(13, 61, 18);
 }
 
+#start-btn {
+    position: relative;
+    z-index: 99999;
+}
 
 /*starting image styling*/
 
@@ -80,8 +84,6 @@ h2 {
     bottom: 8vh;
     left: 15vw;
     height: 35vh;
-
-    animation: float-up-down 2s ease-in-out infinite;
 }
 
 .possum-position {
@@ -89,8 +91,6 @@ h2 {
     bottom: 8vh;
     right: 15vw;
     height: 35vh; 
-
-    animation: float-up-down 2s ease-in-out infinite;
 }
 
 
@@ -203,9 +203,6 @@ h2 {
 }
 
 
-.fighter-anim {
-    animation: float-up-down 2s ease-in-out infinite;
-}
 
 /*gameover overlay styling*/
 #gameover-overlay {
@@ -340,4 +337,45 @@ footer span:hover {
     100% {
     transform: translateY(0);
   }
+}
+
+.floating {
+    animation: float-up-down 2s ease-in-out infinite;
+}
+
+/*attack animations*/
+/* Small jab hit */
+@keyframes jab-hit {
+    0% { transform: translateX(0); }
+    30% { transform: translateX(-6px); }
+    60% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+}
+
+.small-hit {
+    animation: jab-hit 0.2s ease;
+}
+
+
+@keyframes big-flash {
+    0% { filter: brightness(1); transform: translateX(0); }
+    50% { filter: brightness(3); transform: translateX(-20px); }
+    100% { filter: brightness(1); transform: translateX(0); }
+}
+
+.big-hit {
+    animation: big-flash 0.35s ease;
+}
+
+/*dodge animation*/
+
+@keyframes dodge-move {
+    0%   { transform: translateX(0); }
+    30%  { transform: translateX(-40px); } 
+    60%  { transform: translateX(40px); }  
+    100% { transform: translateX(0); }
+}
+
+.dodge {
+    animation: dodge-move 0.5s ease-out;
 }
