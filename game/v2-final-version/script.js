@@ -52,6 +52,9 @@
 
     startBtn.addEventListener("click", function(){
 
+        showMessage("<p>Press the button to choose who attacks first!</p>");
+
+
        startScreen.style.display ="none";
        gameScreen.style.display = "block";
 
@@ -267,7 +270,7 @@
         if (turn === "raccoonPlayer") {
 
             // DODGE CHECK
-            if (Math.random() < 0.3) {
+            if (Math.random() < 0.2) {
                 dodgeAnim("possum-boxer");
                 showMessage(`<span class="possum-highlight">Possum</span> dodged the attack!`);
                 turn = "possumPlayer";
@@ -348,6 +351,38 @@
 
 
     };
+    /*exit game button function*/
+    function exitGame(){
+        
+        clearAllTimeouts();
+
+        raccoonHP = 100;
+        possumHP = 100;
+
+        updateHealth("raccoon-health-bar", "raccoon-health", raccoonHP);
+        updateHealth("possum-health-bar", "possum-health", possumHP);
+
+        
+        turn = null;
+
+       
+        document.querySelector("#gamescreen").style.display = "none";
+        document.querySelector("#startscreen").style.display = "block";
+
+        const overlay = document.querySelector('#gameover-overlay');
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+        overlay.style.display = "none";
+
+    
+        randomizeBtn.style.display = "block";
+        attackBtn.style.display = "none";
+
+
+    }
+    document.querySelector('#exit-btn').addEventListener("click", exitGame);
+    document.querySelector("#gameover-overlay").style.display = "none";
+
 
     /*restart button function*/
     function restartGame(){
