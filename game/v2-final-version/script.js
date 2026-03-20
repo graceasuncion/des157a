@@ -115,7 +115,7 @@
         console.log("FILL CLASSES NOW:", fill.className);
 
 
-        document.querySelector(textId).textContent = percent + "%";
+        document.querySelector(`#${textId}`).textContent = percent + "%";
 
         if (percent <=0){
             if(barId === "raccoon-health-bar"){
@@ -135,19 +135,19 @@
 
     /*floating animation*/
      function stopFloating(characterId){
-        const noFloat = document.querySelector(characterId);
+        const noFloat = document.querySelector(`#${characterId}`);
         noFloat.classList.remove("floating");
      }
 
      function resumeFloating(characterId){
-        const yesFloat = document.querySelector(characterId);
+        const yesFloat = document.querySelector(`#${characterId}`);
         yesFloat.classList.add('floating');
      }
 
     /*attack animations*/
 
     function playAttackAnimation(id, idleImg, attackImg){
-        const char = document.querySelector(id);
+        const char = document.querySelector(`#${id}`);
 
         stopFloating(id);
         char.src = attackImg;
@@ -159,7 +159,7 @@
     }
 
     function smallHitAnim(characterId){
-        const smallHit = document.querySelector(characterId);
+        const smallHit = document.querySelector(`#${characterId}`);
         smallHit.classList.remove("small-hit");
         void smallHit.offsetWidth;
         smallHit.classList.add("small-hit");
@@ -170,7 +170,7 @@
     }
 
     function bigHitAnim(characterId){
-        const bigHit = document.querySelector(characterId);
+        const bigHit = document.querySelector(`#${characterId}`);
         bigHit.classList.remove("big-hit");
         void bigHit.offsetWidth;
         bigHit.classList.add("big-hit");
@@ -184,7 +184,7 @@
     /*dodge animation*/
 
     function dodgeAnim(characterId){
-        const char = document.querySelector(characterId);
+        const char = document.querySelector(`#${characterId}`);
 
         stopFloating(characterId);
 
@@ -269,6 +269,8 @@
         
         if (turn === "raccoonPlayer") {
 
+            stopFloating("raccoon-boxer");
+
             // DODGE CHECK
             if (Math.random() < 0.2) {
                 dodgeAnim("possum-boxer");
@@ -283,7 +285,6 @@
                 return;
             }
 
-           
             raccoonAttack();
             turn = "possumPlayer";
 
@@ -294,10 +295,9 @@
                 }
             }, 1500);
 
-        } 
-        
-        else {
+        } else {
 
+            stopFloating("possum-boxer");
             
             if (Math.random() < 0.2) {
                 dodgeAnim("raccoon-boxer");
